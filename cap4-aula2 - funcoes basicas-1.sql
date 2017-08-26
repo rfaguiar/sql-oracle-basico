@@ -39,7 +39,24 @@ select nome, substr(nome, length(nome) -1, 2) from taluno;
 
 select nome, substr(nome, 3, length(nome) -3) from taluno;
 
+select * from taluno
+where lower(nome) = 'marcio';
 
+select * from taluno
+where upper(nome) = 'MARCIO';
+
+select * from taluno
+where upper(substr(cidade, 1, 3)) = 'CAN';
+
+update taluno set salario = 633.47
+where cod_aluno = 1;
+
+select salario,
+  replace(salario, '.', ''),
+  rpad(salario, 10, '0'),
+  lpad(salario, 10, '0'),
+  lpad(replace(salario, ',', ''), 10, '0')
+from taluno;
 
 
 
